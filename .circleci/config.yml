@@ -10,7 +10,7 @@ jobs:
       - image: 'tghastings/code-esaas'
         auth:
             username: stephiestudnar@gmail.com
-            password: $DOCKERHUB_PASSWORD
+            password: $heroku
     steps:
       - checkout
       - run:
