@@ -8,4 +8,23 @@ RSpec.feature "HomePages", type: :feature do
     expect(page).to have_text("Projects")
   end
 
+  scenario "Vistor cannot add new project without logging in" do
+    visit root_path
+    click_link "New Project"
+    expect(page).to have_text("Log in")
+  end
+
+  scenario "User can add new project after logging in" do
+    visit root_path
+    createUser
+    login_as(@user)
+    click_link "New Project"
+    expect(page).to have_text("Description")
+  end
+
+
+end
+
+def createUser
+  @user = User.create(email: "123@abc.com", password: "abc123456")
 end
