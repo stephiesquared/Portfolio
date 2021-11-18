@@ -8,9 +8,9 @@ jobs:
   build:
     docker:
       - image: 'tghastings/code-esaas'
-      auth:
-          username: stephiestudnar@gmail.com
-          password: $DOCKERHUB_PASSWORD
+        auth:
+            username: stephiestudnar@gmail.com
+            password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
       - run:
