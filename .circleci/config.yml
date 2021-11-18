@@ -10,7 +10,7 @@ jobs:
       - image: 'tghastings/code-esaas'
         auth:
             username: stephiestudnar@gmail.com
-            password: $DOCKERHUB_PASSWORD
+            password: $HEROKU_API_KEY
     steps:
       - checkout
       - run:
@@ -33,4 +33,3 @@ workflows:
       - deploy:
           requires:
             - build
-            
