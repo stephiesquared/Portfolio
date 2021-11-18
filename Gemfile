@@ -31,6 +31,7 @@ gem 'mini_racer'
 group :production do
   gem 'pg', '~> 0.21' # for Heroku deployment
   gem 'rails_12factor'
+  gem 'devise'
 end
 
 # Use ActiveStorage variant
