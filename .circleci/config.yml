@@ -8,6 +8,9 @@ jobs:
   build:
     docker:
       - image: 'tghastings/code-esaas'
+        auth:
+            username: stephiestudnar@gmail.com
+            password: $HEROKU_API_KEY
     steps:
       - checkout
       - run:
