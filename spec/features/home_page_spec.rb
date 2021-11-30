@@ -10,14 +10,14 @@ RSpec.feature "HomePages", type: :feature do
 
   scenario "Vistor cannot add new project without logging in" do
     visit root_path
-    click_link "New Project"
-    expect(page).to have_text("Log in")
+    expect(page).not_to have_text("Log in")
   end
 
   scenario "User can add new project after logging in" do
     visit root_path
     createUser
     login_as(@user)
+    visit root_path
     click_link "New Project"
     expect(page).to have_text("Description")
   end
