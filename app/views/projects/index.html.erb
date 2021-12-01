@@ -7,7 +7,7 @@
 <div class="container">
   <div class="row">
     <% @projects.each do |project| %>
-      <div class="d-flex ">
+      <div class="d-flex">
         <div class="card " style="width: 17em; height: 17em;" >
           <div class="card-body ">
             <p><h4><%= project.title %></h4></p>
@@ -23,10 +23,6 @@
     <% end %>
   </div>
 </div>
-
-<% if user_signed_in? %>
-  <%= link_to 'New Project', new_project_path %>
-<% end %>
 
 <style>
   p {
