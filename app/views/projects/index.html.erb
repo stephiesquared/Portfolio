@@ -1,21 +1,42 @@
-<p id="notice"><%= notice %></p>
+<p id="notice" style="color: #212529"><%= notice %></p>
 
-<div class="mx-auto" style="width: 200px;">
+<div class="mx-auto" style="width: 200px; color: rgb(33,37,41)">
   <h1>Projects</h1>
 </div>
 
 <div class="container">
   <div class="row">
+    <div class="d-flex">
+      <div class="card " style=" max-width: 34em; min-width: 17em; width: auto; min-height: 17em; background-color: #ffbf00; margin: 1px; border-radius: 1rem; border-color: #212529; border-width: 10px" >
+        <div class="card-body">
+          <ts class="h4" style="color: #212529; font-size: 28px;">About Me</ts>
+          <am>
+            Welcome to my portfolio!
+          </am>
+          <am>
+            I am Stephie Starling.
+            I created this website as a project for my Software Engineering 
+            course at the University of Colorado Colorado Springs in the fall of 2021. 
+            This portfolio hosts an overview of projects I have worked on. 
+          </am>
+
+          <am><%= link_to 'Vist my GitHub =]', href="https://github.com/stephiesquared", style: "color: #212529;" %> | stephiestudnar@gmail.com</am>
+          
+        </div>
+      </div>
+    </div>
     <% @projects.each do |project| %>
       <div class="d-flex">
-        <div class="card " style="width: 17em; height: 17em;" >
-          <div class="card-body ">
-            <p><h4><%= project.title %></h4></p>
-            <p><%= project.description %></p>
-            <td ><%= link_to 'Show', project %></td>
-            <% if user_signed_in? %>
-              <td><%= link_to 'Edit', edit_project_path(project) %></td>
-              <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <div class="card " style="width: 17em; height: 17em; background-color: #212529; margin: 1px; border-radius: 1rem;" >
+          <div class="card-body">
+            <ts class="h4"><%= link_to project.title, project, style: "color: #ffd966;" %></ts>
+            <ds><%= project.description %></ds>
+            
+            <% if user_signed_in?  %>
+              <div class="container" style="position: absolute; left: 144px; bottom: 10px">
+                <l><%= link_to 'Edit', edit_project_path(project), style: "color: #ffd966;" %></l>
+                <l> | <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, style: "color: #ffd966;" %></l>
+              </div>
             <% end %>
           </div>
         </div>
@@ -25,11 +46,33 @@
 </div>
 
 <style>
-  p {
+  ts {
+    color: rgb(255,255,255);
+  }
+
+  ds {
+    margin-top: 10px;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: rgb(200,200,200);
     display: -webkit-box;
     -webkit-line-clamp: 4; /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }
+
+  l {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: rgb(200,200,200);
+  }
+
+  am {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: auto;
+    color: #212529;
+    display: -webkit-box;
     -webkit-box-orient: vertical;
   }
 </style>

@@ -1,14 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @project.title %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
+<div class="d-flex card " style="padding-bottom: 20px; background-color: #212529; margin: 1px; border-radius: 1rem;" >
+  <div class="card-body">
+    <ts><%= @project.title %></ts>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+    <ds><%= @project.description %></ds>
+
+    <div class="container" style="position: absolute; right: 5px; text-align: right; bottom: 10px">
+      <% if user_signed_in?  %>
+        <l><%= link_to 'Edit', edit_project_path(@project), style: "color: #ffd966;" %> |</l>
+      <% end %>
+      <l><%= link_to 'Back', projects_path, style: "color: #ffd966;" %></l>
+    </div>
+  </div>
+</div>
+
+
+
+<style>
+  ts {
+    font-size: 24px;
+    color: rgb(255,255,255);
+  }
+
+  ds {
+    margin-top: 10px;
+    overflow: hidden;
+    color: rgb(200,200,200);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+  }
+
+  l {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: rgb(200,200,200);
+  }
+</style>

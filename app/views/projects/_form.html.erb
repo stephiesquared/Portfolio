@@ -13,30 +13,13 @@
 
   <div class="mb-3">
     <label for="title" class="form-label">Title</label>
-    <input type="text" class="form-control" name="project[title]" id="project_title" placeholder="Title..." >
+    <textarea class="form-control" name="project[title]" id="project_title" rows="1" ><%= project.title %></textarea>
   </div>
   <div class="mb-3">
     <label for="description" class="form-label">Description</label>
-    <textarea class="form-control" name="project[description]" id="project_description" rows="6" ></textarea>
+    <textarea class="form-control" name="project[description]" id="project_description" rows="6" ><%= project.description %></textarea>
   </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>
 
-
-<!--
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-  
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-  -->
 <% end %>

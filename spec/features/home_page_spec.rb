@@ -18,7 +18,7 @@ RSpec.feature "HomePages", type: :feature do
     createUser
     login_as(@user)
     visit root_path
-    click_link "New Project"
+    click_button "New Project"
     expect(page).to have_text("Description")
   end
 

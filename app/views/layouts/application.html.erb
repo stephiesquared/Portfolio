@@ -17,7 +17,7 @@
     <!-- As a link -->
     <nav class="navbar navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/projects">Stephie Starling's Portfolio</a>
+        <a class="navbar-brand" style="color: #ffd966" href="/projects">Stephie Starling's Portfolio</a>
           <div class="align-right row">
             <% if user_signed_in? %>
               <%= button_to "New Project", new_project_path, method: :get, :class => "btn btn-outline-warning"%>
@@ -39,3 +39,4 @@
     
   </body>
 </html>
+
