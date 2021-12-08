@@ -77,6 +77,7 @@ SimpleCov.start 'rails' do
   add_filter '/spec/' # for rspec
   add_filter '/app/jobs/' # currenly not used
   add_filter '/app/helpers/' # currently not used
+  add_filter '/app/models/application_record.rb'
 end
 
 
